@@ -1,0 +1,20 @@
+{
+  "name": "portfolio-cms-backend",
+  "version": "1.0.0",
+  "description": "Portfolio CMS Backend - Microservices Architecture",
+  "scripts": {
+    "gateway": "cd gateway && npm run dev",
+    "auth": "cd services/auth-service && npm run dev",
+    "user": "cd services/user-service && npm run dev",
+    "portfolio": "cd services/portfolio-service && npm run dev",
+    "media": "cd services/media-service && npm run dev",
+    "analytics": "cd services/analytics-service && npm run dev",
+    "install:all": "npm install && cd gateway && npm install && cd ../services/auth-service && npm install && cd ../user-service && npm install && cd ../portfolio-service && npm install && cd ../media-service && npm install && cd ../analytics-service && npm install && cd ../../shared && npm install",
+    "dev": "concurrently \"npm run gateway\" \"npm run auth\" \"npm run user\" \"npm run portfolio\" \"npm run media\" \"npm run analytics\"",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "jest": "^29.5.0"
+  }
+}
